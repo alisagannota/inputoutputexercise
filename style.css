@@ -23,17 +23,17 @@ button {
     height: 6rem;
 }
 
-#body {
-    width:50rem;
-    margin-top: 9rem;
+.body {
+    width:40rem;
+    margin-top: 18rem;
     position: absolute;
 }
 
-#face {
-    width: 12rem;
-    height: 12rem;
+.face {
+    width: 10rem;
+    height: 10rem;
     position: absolute;
-    margin-top: 15rem;
+    margin-top: 22rem;
     margin-left: -0.5rem;
 }
 

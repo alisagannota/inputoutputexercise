@@ -15,22 +15,20 @@
   <body>
     
     <div id=container>
-        <button onclick="faceFunction()"><img src="surprised.png" class="change"></button>
-        <button onclick="faceFunction()"><img src="sad.png" class="change"></button>
-        <button onclick="faceFunction()"><img src="smiley.png" class="change"></button>
-        <button onclick="bodyFunction()"><img src="stickman.png" class="change"></button>
-        <button onclick="bodyFunction()"><img src="bug.png" class="change"></button>
-        <button onclick="bodyFunction()"><img src="butterfly.png" class="change"></button>
-        <!-- <div><img src="stickman.png" id="body"></div>
-        <div ></div><img src="sad.png" id="face"></div> -->
+        <button onclick="faceFunction1()"><img src="surprised.png" class="change"></button>
+        <button onclick="faceFunction2()"><img src="sad.png" class="change"></button>
+        <button onclick="faceFunction3()"><img src="smiley.png" class="change"></button>
+        <button onclick="bodyFunction1()"><img src="stickman.png" class="change"></button>
+        <button onclick="bodyFunction2()"><img src="bug.png" class="change"></button>
+        <button onclick="bodyFunction3()"><img src="butterfly.png" class="change"></button>
         <div id="draw"></div>
         <button id="screenshot">Save Image</button>
-        <img src="stickman.png" class="hidden">
-        <img src="bug.png" id="body">
-        <img src="butterfly.png" class="hidden">
-        <img src="surprised.png" id="face">
-        <img src="sad.png" class="hidden">
-        <img src="smiley.png" class="hidden">
+        <img src="stickman.png" class="body" id="movedbody1">
+        <img src="bug.png" class="hidden" id="movedbody2">
+        <img src="butterfly.png" class="hidden" id="movedbody3">
+        <img src="surprised.png" class="hidden" id="movedface1">
+        <img src="sad.png" class="hidden" id="movedface2">
+        <img src="smiley.png" class="face" id="movedface3">
 
     </div>
 	
@@ -44,11 +42,11 @@ $(document).ready(function(){
 
     var imageBoard = new DrawingBoard.Board('draw', {
     controls: [
-        // 'Color',
+        'Color',
         { Size: { type: 'range' } },
-        // { DrawingMode: { filler: false } },
-        // 'Navigation',
-        // 'Download'
+        { DrawingMode: { filler: false } },
+        'Navigation',
+        'Download'
     ],
     size: 10,
     webStorage: false,
