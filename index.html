@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>input/output</title>
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="drawingboard.css" />
+    <script src="script.js" type="text/javascript" charset="utf-8" defer></script>
+
+  </head>
+
+  <body>
+    
+    <div id=container>
+        <button onclick="faceFunction()"><img src="surprised.png" class="change"></button>
+        <button onclick="faceFunction()"><img src="sad.png" class="change"></button>
+        <button onclick="faceFunction()"><img src="smiley.png" class="change"></button>
+        <button onclick="bodyFunction()"><img src="stickman.png" class="change"></button>
+        <button onclick="bodyFunction()"><img src="bug.png" class="change"></button>
+        <button onclick="bodyFunction()"><img src="butterfly.png" class="change"></button>
+        <!-- <div><img src="stickman.png" id="body"></div>
+        <div ></div><img src="sad.png" id="face"></div> -->
+        <div id="draw"></div>
+        <button id="screenshot">Save Image</button>
+        <img src="stickman.png" class="hidden">
+        <img src="bug.png" id="body">
+        <img src="butterfly.png" class="hidden">
+        <img src="surprised.png" id="face">
+        <img src="sad.png" class="hidden">
+        <img src="smiley.png" class="hidden">
+
+    </div>
+	
+</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/g/filesaver.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/drawingboard.js/0.4.6/drawingboard.min.js"></script>
+    <script>
+$(document).ready(function(){
+
+    var imageBoard = new DrawingBoard.Board('draw', {
+    controls: [
+        // 'Color',
+        { Size: { type: 'range' } },
+        // { DrawingMode: { filler: false } },
+        // 'Navigation',
+        // 'Download'
+    ],
+    size: 10,
+    webStorage: false,
+    background: "none"
+    });
+
+$("#screenshot").click(function(){
+    domtoimage.toBlob(document.getElementById('draw'))
+.then(function (blob) {
+    window.saveAs(blob, 'stickman.png');
+});
+ })
+})
+    </script>
+</html>
