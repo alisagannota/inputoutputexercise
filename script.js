@@ -42,8 +42,8 @@ function faceFunction3() {
 function bodyFunction1() {
     hideAllBodies();
     body1.className === "hidden"
-    ? (body2.className = "body")
-    : (body3.className = "hidden");
+    ? (body1.className = "body")
+    : (body1.className = "hidden");
 }
 function bodyFunction2() {
     hideAllBodies();
