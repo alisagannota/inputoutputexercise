@@ -22,7 +22,7 @@
         <button onclick="bodyFunction2()"><img src="bug.png" class="change"></button>
         <button onclick="bodyFunction3()"><img src="butterfly.png" class="change"></button>
         <div id="draw"></div>
-        <button id="screenshot">Save Image</button>
+        <!-- <button id="screenshot">Save Image</button> -->
         <img src="stickman.png" class="hidden" id="movedbody1">
         <img src="bug.png" class="hidden" id="movedbody2">
         <img src="butterfly.png" class="hidden" id="movedbody3">
@@ -34,8 +34,8 @@
 	
 </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/g/filesaver.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/g/filesaver.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/drawingboard.js/0.4.6/drawingboard.min.js"></script>
     <script>
 $(document).ready(function(){
@@ -53,12 +53,12 @@ $(document).ready(function(){
     background: "none"
     });
 
-$("#screenshot").click(function(){
-    domtoimage.toBlob(document.getElementById('draw'))
-.then(function (blob) {
-    window.saveAs(blob, 'stickman.png');
-});
- })
+// $("#screenshot").click(function(){
+//     domtoimage.toBlob(document.getElementById('draw'))
+// .then(function (blob) {
+//     window.saveAs(blob, 'stickman.png');
+// });
+//  })
 })
     </script>
 </html>
